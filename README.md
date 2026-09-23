@@ -331,75 +331,6 @@ Isso indica que, **dentro dessa avaliação**, considerar simultaneamente as car
 
 ---
 
-## ⚠️ Pontos de atenção no notebook
-
-Antes de considerar o projeto uma implementação final de produção, alguns pontos merecem revisão.
-
-### 1️⃣ Regra de outliers
-
-O código utiliza:
-
-```python
-(df['Metragem'] >= lim_superior_metragem)
-```
-
-Essa condição mantém a faixa de metragem igual ou superior ao limite calculado.
-
-Caso a intenção tenha sido remover valores acima do limite superior do IQR, essa lógica precisa ser revisada.
-
-### 2️⃣ `df_clean` não é usado na modelagem
-
-Apesar da criação de `df_clean`, a modelagem utiliza:
-
-```python
-X = df.drop('Valor_Aluguel', axis=1)
-y = df['Valor_Aluguel']
-```
-
-Portanto, os resultados de regressão apresentados não correspondem a um modelo treinado diretamente sobre `df_clean`.
-
-### 3️⃣ Referência `_test`
-
-Na avaliação da regressão múltipla aparece:
-
-```python
-r2 = modelo_multiplo.score(_test, y_test)
-```
-
-Enquanto a variável criada anteriormente é:
-
-```python
-x_test
-```
-
-Essa inconsistência merece correção para garantir uma execução limpa e reprodutível.
-
-O notebook, entretanto, registra:
-
-```text
-R² de teste = 0,640078...
-```
-
----
-
-## 🧪 Possíveis melhorias
-
-O projeto pode ser expandido com:
-
-- 📏 MAE — Mean Absolute Error;
-- 📉 RMSE — Root Mean Squared Error;
-- 🔄 validação cruzada;
-- 🧪 análise de resíduos;
-- 🔍 diagnóstico de multicolinearidade;
-- 🧹 revisão da estratégia de tratamento de outliers;
-- ⚙️ criação de pipelines de pré-processamento;
-- 🤖 comparação com modelos não lineares;
-- 🏗️ separação entre análise, treinamento e avaliação;
-- 📦 criação de um `requirements.txt`;
-- 🚀 organização do projeto para facilitar reprodução e manutenção.
-
----
-
 ## 🛠️ Tecnologias
 
 <p align="center">
@@ -516,15 +447,7 @@ Este projeto reúne, em um único fluxo:
 
 ---
 
-## 📄 Licença
-
-Não foi definida uma licença específica para este projeto.
-
-Caso o repositório seja disponibilizado publicamente, recomenda-se adicionar um arquivo `LICENSE` conforme a licença escolhida pelo autor.
-
----
-
-## 👤 Autor
+## 👤 Antônio Pedro Rosa Crespilho
 
 **Projeto de estudo em Regressão Linear**
 
@@ -535,5 +458,4 @@ Desenvolvido com foco em:
 ---
 
 <p align="center">
-  ⭐ Se este projeto fizer parte do seu portfólio, considere manter o notebook organizado e documentar futuras melhorias.
 </p>
