@@ -82,5 +82,5 @@ Durante a avaliação do modelo de Regressão Linear Simples para previsão de p
 
 ## ✉️ Contato
 
-Desenvolvido por **Luiz Bagarini**  
+Desenvolvido por **Antônio Pedro Rosa Crespilho**  
 - **GitHub:** [@Antt09](https://github.com/Antt09)
