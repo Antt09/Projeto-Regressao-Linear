@@ -1,4 +1,4 @@
-# 📊 Análise e Modelagem de Risco de Crédito & Previsão de Imóveis
+# 📊 Análise e Modelagem em Previsão de Imóveis no Valor do Aluguel
 
 Este repositório reúne projetos práticos voltados para a análise de dados, pipeline de pré-processamento, engenharia de *features* e construção de modelos preditivos com **Python**, **Pandas** e **Scikit-Learn**.
 
